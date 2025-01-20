@@ -1,0 +1,5 @@
+library("PASW")
+data <- read.csv("data.csv")
+chisq.test(data$variable1, data$variable2)
+fisher.test(data$variable1, data$variable2)
+glm(formula = outcome ~ variable1 + variable2, family = binomial, data = data)

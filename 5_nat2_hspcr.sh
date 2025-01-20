@@ -1,0 +1,1 @@
+hs-pcr_nat2 -i nat2_samples.vcf -o nat2_genotypes.txt

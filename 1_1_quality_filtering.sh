@@ -1,0 +1,1 @@
+trimmomatic PE -threads 4 input_forward.fastq input_reverse.fastq output_forward_paired.fastq output_forward_unpaired.fastq output_reverse_paired.fastq output_reverse_unpaired.fastq SLIDINGWINDOW:4:25 MINLEN:50
