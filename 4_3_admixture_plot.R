@@ -1,6 +1,6 @@
 
 ##########################
-# Cross validation plot
+# Create a plot for cross-validation error of ADMIXTURE's results
 
 # Read the file
 file_path = "result_ADMIXTURE/result_CV_error.txt"
@@ -43,7 +43,7 @@ axis(side=1,at = xlable.at, labels = xlabel.txt)
 dev.off()
 
 ##########################
-# ADMIXTURE plot 
+# Create a plot for ADMIXTURE's results 
 
 ipcaps.result="result_IPCAPS"
 admixture.result="result_ADMIXTURE/model.jody.14."
@@ -147,12 +147,12 @@ barplot(order.group.k5, col=c5, xlab="", ylab="Ancestry (K=5)", border=NA, space
 dev.off()
 
 #################
-# plot PCA 
+# Create a plot for PCA 
 
 library(readxl)
 library(KRIS)
 
-ipcaps.result="resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
+ipcaps.result="selected_model/IPCAPs_result"
 #groupfile=paste0(ipcaps.result,"/groups_3nodes.xls")
 #groups = read_excel(groupfile, sheet = "groups_3nodes")
 groupfile=paste0(ipcaps.result,"/groups.txt")
@@ -169,7 +169,7 @@ filter_group = new_group[idx,]
 plot_PC = PCs[filter_group$row.number,]
 plot_label = filter_group$node
 
-fname="resultrerunadmixtureModelJody14_r2ab70/PC_14nodes.pdf"
+fname="selected_model/PC_14nodes.pdf"
 pdf(fname, width = 10, height = 10)
 
 my.pattern = rep(1,14)
@@ -191,13 +191,6 @@ plot_label[which(plot_label == 66)] = 'Node 66'
 plot_label[which(plot_label == 20)] = 'Node 20'
 all.labels = unique(plot_label)
 
-#map.color = c("red", rgb(0, 68, 27, maxColorValue = 255),
-#              "blue", rgb(231, 41, 138, maxColorValue = 255),
-#              "darkorange", "black")
-#map.color = c(map.color, rgb(102, 37, 6, maxColorValue = 255),
-#              rgb(63, 0, 125 , maxColorValue = 255), "green")
-#map.color = c(map.color, "cyan")
-
 map.color = c("#0000FF","#00FF00","#FF0000","#00FFFF","#FF00FF",
               "#FFFF00","#008888","#880088","#888800","#000088",
               "darkorange","#880000","#888888", "#000000")
@@ -208,11 +201,11 @@ dev.off()
 
 
 ###############################
-# Calculate Fst
+# Calculate Fst values for clustering results
 
 library(KRIS)
 
-ipcaps.result="resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
+ipcaps.result="selected_model/IPCAPs_result"
 # load raw data
 rawfile = paste0(ipcaps.result,"/RData/rawdata.RData")
 load(rawfile)
@@ -239,14 +232,5 @@ for (i in 1:(length(valid_node)-1)){
   }
 }
 
-fout = "resultrerunadmixtureModelJody14_r2ab70/pairwise_fst_all_nodes.csv"
+fout = "selected_model/pairwise_fst_all_nodes.csv"
 write.csv(mat_fst, file = fout)
-
-
-#===================================
-# Just to check the conditions
-ipcaps.result="resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
-# load raw data
-condition_file = paste0(ipcaps.result,"/RData/condition.RData")
-load(condition_file)
-
