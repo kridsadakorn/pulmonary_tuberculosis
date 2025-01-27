@@ -152,7 +152,7 @@ dev.off()
 library(readxl)
 library(KRIS)
 
-ipcaps.result="/Users/kris/Desktop/Collab_TB/resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
+ipcaps.result="resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
 #groupfile=paste0(ipcaps.result,"/groups_3nodes.xls")
 #groups = read_excel(groupfile, sheet = "groups_3nodes")
 groupfile=paste0(ipcaps.result,"/groups.txt")
@@ -169,7 +169,7 @@ filter_group = new_group[idx,]
 plot_PC = PCs[filter_group$row.number,]
 plot_label = filter_group$node
 
-fname="/Users/kris/Desktop/Collab_TB/resultrerunadmixtureModelJody14_r2ab70/PC_14nodes.pdf"
+fname="resultrerunadmixtureModelJody14_r2ab70/PC_14nodes.pdf"
 pdf(fname, width = 10, height = 10)
 
 my.pattern = rep(1,14)
@@ -212,7 +212,7 @@ dev.off()
 
 library(KRIS)
 
-ipcaps.result="/Users/kris/Desktop/Collab_TB/resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
+ipcaps.result="resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
 # load raw data
 rawfile = paste0(ipcaps.result,"/RData/rawdata.RData")
 load(rawfile)
@@ -239,13 +239,13 @@ for (i in 1:(length(valid_node)-1)){
   }
 }
 
-fout = "/Users/kris/Desktop/Collab_TB/resultrerunadmixtureModelJody14_r2ab70/pairwise_fst_all_nodes.csv"
+fout = "resultrerunadmixtureModelJody14_r2ab70/pairwise_fst_all_nodes.csv"
 write.csv(mat_fst, file = fout)
 
 
 #===================================
 # Just to check the conditions
-ipcaps.result="/Users/kris/Desktop/Collab_TB/resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
+ipcaps.result="resultrerunadmixtureModelJody14_r2ab70/IPCAPs_result"
 # load raw data
 condition_file = paste0(ipcaps.result,"/RData/condition.RData")
 load(condition_file)
