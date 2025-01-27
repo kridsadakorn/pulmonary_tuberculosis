@@ -66,7 +66,7 @@ sh 4_1_genotype_qc.sh
 4_2_pca_admixture.sh
 ```
 
-  - Create plots for  ADMIXTURE.
+  - Create plots for ADMIXTURE and calcuate Fst values for clustering results
   
 ```
 Rscript 4_3_admixture_plot.R
@@ -97,7 +97,7 @@ Rscript 6_statistical_analysis.R
 - `3_cluster_analysis.sh`: Script for bacterial genetic clustering using MEGA7 and PopArt.
 - `4_1_genotype_qc.sh`: Script for quality control of SNP genotyping data using PLINK.
 - `4_2_pca_admixture.sh`: Script for population stratification analysis using IPCAPS and ADMIXTURE.
-- `4_3_admixture_plot.R`: Script for creating plots for the results of ADMIXTURE.
+- `4_3_admixture_plot.R`: Script for creating plots for the results of ADMIXTURE and calcuate Fst values for clustering results.
 - `5_nat2_hspcr.sh`: Script for NAT2 genotyping using HS-PCR.
 - `6_statistical_analysis.R`: R script for statistical analysis using PASW Statistics.
 
